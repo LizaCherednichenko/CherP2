@@ -9,6 +9,22 @@
       Title="PageUser">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="DGTable1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding name}" Width="2*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding opisanie}" Width="4*"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding kolich}" Width="1*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding cena}" Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
         
+        <Button x:Name="BtnBack" Content="Назад" Grid.Row="1" Height="40" Width="100" Margin="5" HorizontalAlignment="Right" Click="BtnBack_Click"/>
+
     </Grid>
 </Page>

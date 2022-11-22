@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CherP2.ApplicationData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace CherP2.Pages
         public PageUser()
         {
             InitializeComponent();
+            DGTable1.ItemsSource = DBEntities.GetContext().Table1.ToList();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MainFrame.GoBack();
         }
     }
 }

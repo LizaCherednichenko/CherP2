@@ -50,5 +50,27 @@ namespace CherP2.Pages
         {
             AppFrame.MainFrame.Navigate(new PageCreate((sender as Button).DataContext as Table1));
         }
+
+        private void BtnDel_Click(object sender, RoutedEventArgs e)
+        {
+            var _dateForDel = DGTable1.SelectedItems.Cast<Table1>().ToList();
+
+            if (MessageBox.Show("Вы действительно хотите удалить выбранные данные?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                DBEntities.GetContext().Table1.RemoveRange(_dateForDel);
+
+                try
+                {
+                    DBEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                DGTable1.ItemsSource = DBEntities.GetContext().Table1.ToList();
+            }
+        }
     }
 }

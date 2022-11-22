@@ -64,6 +64,7 @@ namespace CherP2.Pages
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString(), "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
             
             if (_currentTovar.id == 0)
