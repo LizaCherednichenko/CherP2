@@ -17,6 +17,15 @@ namespace CherP2.ApplicationData
         public int id { get; set; }
         public string name { get; set; }
         public string opisanie { get; set; }
+        public string img
+        {
+            get { return img; }
+            set
+            {
+                img = $"pack://application:,,,/CherPodgotov;component/Resources/{opisanie}.png";
+            }
+        }
+
         public int kolich { get; set; }
         public decimal cena { get; set; }
     }
