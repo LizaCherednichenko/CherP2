@@ -1,0 +1,37 @@
+﻿<Page x:Class="CherP2.Pages.PageCreate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CherP2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageCreate">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Наименование" FontSize="15" Width="150"/>
+                <TextBox Text="{Binding name}" Width="200" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Описание" FontSize="15" Width="150"/>
+                <TextBox Text="{Binding opisanie}" Width="200" Height="100" TextWrapping="Wrap" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество" FontSize="15" Width="150"/>
+                <TextBox Text="{Binding kolich}" Width="200" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Цена" FontSize="15" Width="150"/>
+                <TextBox Text="{Binding cena}" Width="200" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="BtnSave" Content="Сохранить" Height="40" Width="100" Margin="5" Click="BtnSave_Click"/>
+                <Button x:Name="BtnBack" Content="Назад" Height="40" Width="100" Margin="5" Click="BtnBack_Click"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>
